@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+    margin: 0 20px;
+}
+
+.accordion:hover .accordion-text {
+    color: blue;
+}
+
+.accordion:hover .accordion-icon {
+    display: inline-block;
+    color: black;
+    transform: rotate(45deg);
+    transition: all 0.2s;
+}
+
+@media screen and (min-width: 768px) {
+    .accordion {
+        width: 700px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .accordion {
+        width: 1000px;
+    }
+}
+
+.accordion-box {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.accordion-box:hover {
+    color: yellow;
+}
+
+.accordion-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+    color: black;
+    transition: all 0.2s;
+}
+
+.accordion-text.accordion-text:active,
+.accordion-text:active .accordion-icon {
+    color: yellow;
+}
+
+.accordion-text:hover + .content {
+    max-height: 800px;
+}
+
+.accordion-text:hover .accordion-icon {
+    transform: rotate(0);
+}
+
+@media screen and (min-width: 768px) {
+    .accordion-text {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .accordion-text {
+        font-size: 40px;
+    }
+}
+
+.accordion-icon {
+    display: none;
+}
+
+.accordion-input {
+    display: none;
+}
+
+.accordion-input:checked + label.accordion-text {
+    color: black;
+}
+
+.accordion-input:checked + label + .content {
+    max-height: 800px;
+}
+
+.accordion-input:checked + label .accordion-icon {
+    transform: rotate(0);
+}
+
+.content {
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.content-image {
+    width: 100%;
+}
